@@ -35,7 +35,6 @@ const Inputs = (props) => {
   return (
     <div>
         <form>
-
       <input type="number" className="numbox" onKeyUp={(e) => limit(e, 0)} required />
       <input type="number" className="numbox" onKeyUp={(e) => limit(e, 1)} required/>
       <input type="number" className="numbox" onKeyUp={(e) => limit(e, 2)} required/>
@@ -43,12 +42,8 @@ const Inputs = (props) => {
       <input type="number" className="numbox" onKeyUp={(e) => limit(e, 4)} required/>
       <input type="number" className="numbox" onKeyUp={(e) => limit(e, 5)} required/>
       <input type="number" className="specialNumBox" onKeyUp={(e) => limit(e, 6)} />
-
-            <button   className="btn btn1" disabled={props.isEnable}  >PLAY</button>
-
-
+            <button   className="btn btn1" disabled={props.isEnable}>PLAY</button>
         </form>
-
     </div>
   );
 };
