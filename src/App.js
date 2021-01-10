@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>Hello CodeSandbox</h1>
-      <Inputs isEnable={isEnable} setIsEnable={(isEnable)=>setIsEnable(isEnable)}/>
+      <Inputs usersNumbers={usersNumbers} isEnable={isEnable} setIsEnable={(isEnable)=>setIsEnable(isEnable)}/>
         {usersNumbers.join(' ')}
       <GeneratorRandomNumber setUsersNumbers={usersNumbers=>setUsersNumbers(usersNumbers)}/>
       <Stats/>
