@@ -5,7 +5,7 @@ import React from 'react';
 const GeneratorRandomNumber = (props) => {
     const generator = () => {
         let win = [];
-        let spec = [];
+
         for (let i = 0; i < 25; i++) {
             let rand1 = Math.floor(Math.random() * 68 + 1);
             if (!win.includes(rand1)) {
@@ -14,16 +14,11 @@ const GeneratorRandomNumber = (props) => {
         }
         win = [...new Set(win)];
         win.length = 5;
-        for (let i = 0; i < 25; i++) {
-            let rand1 = Math.floor(Math.random() * 24 + 1);
-            if (!win.includes(rand1)) {
-                spec.push(rand1);
-            }
-        }
-        win.sort((a, b) => a - b).push(spec[Math.floor(Math.random() * spec.length)]);
+        win.sort((a, b) => a - b).push(Math.floor(Math.random() * 24));
 //props.setUsersNumbers()
+console.log(win)
        props.setUsersNumbers(win)
-    };
+    }
 
 
     return (
