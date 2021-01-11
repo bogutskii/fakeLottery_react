@@ -6,19 +6,23 @@ import GeneratorRandomNumber from './Components/GeneratorRandomNumber'
 
 export default function App() {
     const [isEnable, setIsEnable] = useState(true)
-    const [usersNumbers, setUsersNumbers] = useState(['','','','','',''])
+    const [userNumbers, setUserNumbers] = useState(['','','','','',''])
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <Inputs usersNumbers={usersNumbers}
-              setUsersNumbers={(usersNumbers)=>setUsersNumbers(usersNumbers)}
+      <h1 className="h1-main">
+          lottery simulator
+      </h1>
+
+      <Inputs usersNumbers={userNumbers}
+              setUsersNumbers={(usersNumbers)=>setUserNumbers(usersNumbers)}
               isEnable={isEnable}
               setIsEnable={(isEnable)=>setIsEnable(isEnable)}
       />
-        {usersNumbers.join(' ')}
+
       <GeneratorRandomNumber setIsEnable={(isEnable)=>setIsEnable(isEnable)}
-                             setUsersNumbers={(usersNumbers)=>setUsersNumbers(usersNumbers)}/>
-      <Stats/>
+                             setUsersNumbers={(usersNumbers)=>setUserNumbers(usersNumbers)}/>
+        {userNumbers.join(' ')}
+      <Stats user/>
     </div>
   );
 }

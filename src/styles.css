@@ -79,7 +79,7 @@ body {
 }
 
 .btn {
-  margin: 0px 10px 10px;
+  margin: 5px;
   padding: 15px 34px;
   overflow: hidden;
   font-family: "Montserrat Alternates", sans-serif;
@@ -112,6 +112,11 @@ body {
 .btn4 {
   background: linear-gradient(90deg, #38ffb1, #17d215);
 }
+.btn5 {
+  background: linear-gradient(90deg, #eac6b7, #e8adcd);
+}
+
+
 .btn:before,
 .btn:after {
   content: "";
@@ -134,4 +139,13 @@ body {
 
 .btn:hover:after {
   left: -20%;
+}
+.input-form {
+  display: inline-flex;
+}
+.h1-main{
+  font-size:5vw;
+  background: -webkit-linear-gradient(#ac1616,#ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
