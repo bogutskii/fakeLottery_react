@@ -3,9 +3,10 @@ import React from "react";
 
 const Inputs = (props) => {
 
-    const inputNumbers = [];
+    const inputNumbers = [...props.usersNumbers];
 
     const limit = (e, key) => {
+        inputNumbers[key]=e.target.value;
 
         if (e.target.value > (key !== 5 ? 69 : 24) || e.target.value === "00") {
             inputNumbers[key] = e.target.value.substr(0, 1);
@@ -21,7 +22,7 @@ const Inputs = (props) => {
     }
 
     const checkFields = () => {
-        if (Object.values(inputNumbers).every(el => el > 0)) {
+        if (Object.values(inputNumbers).every(el => +el > 0)) {
             props.setIsEnable(false)
         } else {
             props.setIsEnable(true)
