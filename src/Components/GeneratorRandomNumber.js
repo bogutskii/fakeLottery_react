@@ -18,6 +18,7 @@ const GeneratorRandomNumber = (props) => {
 //props.setUsersNumbers()
 console.log(win)
        props.setUsersNumbers(win)
+        props.setIsEnable(false)
     }
 
 
