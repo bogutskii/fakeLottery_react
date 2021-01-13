@@ -10,12 +10,11 @@ const Stats = (props) => {
                 <tbody>
                 <tr>
                     <td>User number</td>
-                    <td>{props.userNumbers
-                        .map((num, i) => i !== 5 ?
-                            <span className="white-cir">{num}</span>
-                            :
-                            <span className="red-cir">{num}</span>
-                        )
+                    <td>{props.userNumbers.map((num, i) => i !== 5 ?
+                        <span className="white-cir">{num}</span>
+                        :
+                        <span className="red-cir">{num}</span>
+                    )
 
                     }</td>
                 </tr>
