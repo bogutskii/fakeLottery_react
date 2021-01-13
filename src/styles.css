@@ -145,7 +145,43 @@ body {
 }
 .h1-main{
   font-size:5vw;
-  background: -webkit-linear-gradient(#ac1616,#ffffff);
+  background: linear-gradient(94.23deg,#5374fa 12.41%,#fd9179 52.55%, #09eabc 89.95%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1vw;
+}
+table td {
+  text-align: left;
+}
+.white-cir{
+  background-color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  text-align: center;
+  align-items: center;
+  margin: 10px 8px 10px 0;
+  font-size: 19px;
+  font-family: 'ProximaNova-Bold';
+  color: #2f3e4a;
+  padding: 5px;
+}
+.red-cir{
+  background-color: #e30c07;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  text-align: center;
+  align-items: center;
+  margin: 10px 8px 10px 0;
+  font-size: 19px;
+  font-family: 'ProximaNova-Bold';
+  padding: 10px;
+}
+

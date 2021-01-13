@@ -22,7 +22,7 @@ export default function App() {
       <GeneratorRandomNumber setIsEnable={(isEnable)=>setIsEnable(isEnable)}
                              setUsersNumbers={(usersNumbers)=>setUserNumbers(usersNumbers)}/>
         {userNumbers.join(' ')}
-      <Stats user/>
+      <Stats userNumbers={userNumbers}/>
     </div>
   );
 }
