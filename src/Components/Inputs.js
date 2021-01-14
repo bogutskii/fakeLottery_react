@@ -4,6 +4,15 @@ import React from "react";
 const Inputs = (props) => {
 
     const generator = () => {
+
+        let user= [...props.usersNumbers];
+       user.sort((a,b)=>{
+           if(user.indexOf(a) == 5)return 0
+           else return a - b
+       })
+        props.setUsersNumbers(user.map(num => String(num).length < 2 ? '0'+num : num))
+
+
         let comp = [];
         for (let i = 0; i < 25; i++) {
             let rand1 = Math.floor(Math.random() * 68 + 1);

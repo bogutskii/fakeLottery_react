@@ -8,6 +8,7 @@ export default function App() {
     const [isEnable, setIsEnable] = useState(true)
     const [userNumbers, setUserNumbers] = useState(['', '', '', '', '', ''])
     const [winningNumbers, setWinningNumbers] = useState([])
+    const [sameNumber, setSameNumber] = useState([])
     return (
         <div className="App">
             <h1 className="h1-main">
