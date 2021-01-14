@@ -21,7 +21,11 @@ const Stats = (props) => {
 
                 <tr>
                     <td>Win number</td>
-                    <td>0</td>
+                    <td>{props.winningNumbers.map((num, i) => i !== 5 ?
+                        <span className="white-cir">{num}</span>
+                        :
+                        <span className="red-cir">{num}</span>
+                    )}</td>
                 </tr>
                 <tr>
                     <td>Same number</td>

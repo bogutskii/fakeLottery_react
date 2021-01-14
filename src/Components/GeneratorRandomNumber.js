@@ -16,9 +16,7 @@ const GeneratorRandomNumber = (props) => {
         win.length = 5;
         win.sort((a, b) => a - b).push(Math.ceil(Math.random() * 24))
 
-
-console.log(win)
-       props.setUsersNumbers(win.map(num => +num < 10 ? '0'+num : num))
+        props.setUsersNumbers(win.map(num => +num < 10 ? '0'+num : num))
         props.setIsEnable(false)
     }
 

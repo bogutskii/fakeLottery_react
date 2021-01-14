@@ -3,6 +3,22 @@ import React from "react";
 
 const Inputs = (props) => {
 
+    const generator = () => {
+        let comp = [];
+        for (let i = 0; i < 25; i++) {
+            let rand1 = Math.floor(Math.random() * 68 + 1);
+            if (!comp.includes(rand1)) {
+                comp.push(rand1);
+            }
+        }
+        comp = [...new Set(comp)];
+        comp.length = 5;
+        comp.sort((a, b) => a - b).push(Math.ceil(Math.random() * 24))
+
+        props.setWinningNumbers(comp.map(num => +num < 10 ? '0'+num : num))
+    }
+
+
     const inputNumbers = [...props.usersNumbers];
 
     const limit = (e, key) => {
@@ -43,7 +59,7 @@ const Inputs = (props) => {
                 <input value={props.usersNumbers[5]} type="number" className="specialNumBox"
                        onChange={(event) => limit(event, 5)} required/>
             </form>
-            <button className="btn btn1" disabled={props.isEnable} >PLAY</button>
+            <button className="btn btn1" onClick={generator} disabled={props.isEnable} >PLAY</button>
             <button className="btn btn5" disabled={props.isEnable} >Clear</button>
         </div>
     );

@@ -157,6 +157,7 @@ body {
 }
 table td {
   text-align: left;
+  height: 3vw;
 }
 .white-cir{
   background-color: #fff;
