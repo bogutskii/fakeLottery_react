@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dffa52a280c62af64181df1d413de164",
+    "revision": "fa3fdf0f7669a573024115649e4188bf",
     "url": "/fakeLottery_react/index.html"
   },
   {
-    "revision": "e71186e011ea633c7ebf",
-    "url": "/fakeLottery_react/static/css/main.771c7820.chunk.css"
+    "revision": "d0311b516f2ba2608d38",
+    "url": "/fakeLottery_react/static/css/main.875f66da.chunk.css"
   },
   {
     "revision": "b8ea1c049ffccff95c5c",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fakeLottery_react/static/js/2.d668f49d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e71186e011ea633c7ebf",
-    "url": "/fakeLottery_react/static/js/main.24fd0d99.chunk.js"
+    "revision": "d0311b516f2ba2608d38",
+    "url": "/fakeLottery_react/static/js/main.cec22b70.chunk.js"
   },
   {
     "revision": "b7453e7c7e4df73bf342",
