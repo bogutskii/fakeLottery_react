@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-
 const GeneratorRandomNumber = (props) => {
     const generator = () => {
         let win = [];
@@ -16,7 +15,7 @@ const GeneratorRandomNumber = (props) => {
         win.length = 5;
         win.sort((a, b) => a - b).push(Math.ceil(Math.random() * 24))
 
-        props.setUsersNumbers(win.map(num => +num < 10 ? '0'+num : num))
+        props.setUsersNumbers(win.map(num => +num < 10 ? '0' + num : num))
         props.setIsEnable(false)
     }
 

@@ -3,6 +3,12 @@ import React from 'react';
 
 const Stats = (props) => {
 
+    // const filterSameNumber = () => {
+    //     props.setSameNumber(props.usersNumbers.filter(el => props.winningNumbers.includes(el)))
+    //     console.log('yes')
+    // }
+
+
     return (
         <div>
             <h1>Stats</h1>
@@ -29,7 +35,7 @@ const Stats = (props) => {
                 </tr>
                 <tr>
                     <td>Same number</td>
-                    <td>0</td>
+                    <td>{props.sameNumber}</td>
                 </tr>
                 <tr>
                     <td>total win</td>
