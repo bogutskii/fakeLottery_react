@@ -5,7 +5,7 @@ const GeneratorRandomNumber = (props) => {
     const generator = () => {
         let win = [];
 
-        for (let i = 0; i < 25; i++) {
+        for (let i = 0; i < 55; i++) {
             let rand1 = Math.floor(Math.random() * 68 + 1);
             if (!win.includes(rand1)) {
                 win.push(rand1);
@@ -22,7 +22,7 @@ const GeneratorRandomNumber = (props) => {
 
     return (
         <div>
-            <button className="btn btn3" onClick={generator}>Random</button>
+            <button className="btn btn3" onClick={generator}>Fill Random number</button>
 
         </div>
 

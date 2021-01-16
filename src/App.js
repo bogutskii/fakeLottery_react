@@ -12,8 +12,8 @@ export default function App() {
     const [winningNumbers, setWinningNumbers] = useState([])
     const [sameNumber, setSameNumber] = useState([])
     const [counter, setCounter] = useState({
-        playedTimes:0,
-        credits : 0
+        playedTimes: 0,
+        credits: 0
     })
 
 
@@ -23,6 +23,10 @@ export default function App() {
                 lottery simulator
             </h1>
 
+            <GeneratorRandomNumber setIsEnable={(isEnable) => setIsEnable(isEnable)}
+                                   setUsersNumbers={(usersNumbers) => setUserNumbers(usersNumbers)}
+
+            />
             <Inputs usersNumbers={userNumbers}
                     setUsersNumbers={(usersNumbers) => setUserNumbers(usersNumbers)}
                     isEnable={isEnable}
@@ -35,10 +39,7 @@ export default function App() {
 
             />
 
-            <GeneratorRandomNumber setIsEnable={(isEnable) => setIsEnable(isEnable)}
-                                   setUsersNumbers={(usersNumbers) => setUserNumbers(usersNumbers)}
 
-            />
             <Stats userNumbers={userNumbers}
                    winningNumbers={winningNumbers}
                    sameNumber={sameNumber}
