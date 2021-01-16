@@ -165,7 +165,7 @@ table td {
     height: 3vw;
 }
 
-.white-cir {
+.white-cir,.red-cir, .gray-cir,.redWin-cir  {
     background-color: #fff;
     width: 35px;
     height: 35px;
@@ -180,15 +180,18 @@ table td {
 
 .red-cir {
     background-color: #e30c07;
-    color: #fff;
-    width: 35px;
-    height: 35px;
-    border-radius: 20px;
-    text-align: center;
-    align-items: center;
-    margin: 10px 8px 10px 0;
-    font-size: 19px;
-    padding: 10px;
+}
+.redWin-cir {
+    background-color: #ff4038;
+    color: white;
+    border-radius: 50px;
+    border: 1px solid #0048ff;
+    width: 50px;
+    height: 50px;
+}
+
+.gray-cir {
+    background-color: #b8b4b4;
 }
 
 .footer {
