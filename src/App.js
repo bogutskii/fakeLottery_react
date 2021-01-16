@@ -25,6 +25,7 @@ export default function App() {
                     setIsEnable={(isEnable) => setIsEnable(isEnable)}
                     winningNumbers={winningNumbers}
                     setWinningNumbers={(winningNumbers) => setWinningNumbers(winningNumbers)}
+                    setSameNumber={(sameNumber) => setSameNumber(sameNumber)}
 
             />
 

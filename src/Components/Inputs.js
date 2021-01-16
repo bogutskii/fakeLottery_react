@@ -26,10 +26,13 @@ const Inputs = (props) => {
             comp.sort((a, b) => a - b).push(Math.ceil(Math.random() * 24))
 
             props.setWinningNumbers(comp.map(num => +num < 10 ? '0' + num : num))
-
+            sameNum(user,comp)
         }
 
-
+const sameNum=(arr1,arr2)=>{
+            let same = arr1.filter(num=> arr2.includes(num))
+            props.setSameNumber(same)
+}
         const inputNumbers = [...props.usersNumbers];
 
         const limit = (e, key) => {

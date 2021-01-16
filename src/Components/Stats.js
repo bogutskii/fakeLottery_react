@@ -17,9 +17,9 @@ const Stats = (props) => {
                 <tr>
                     <td>User number</td>
                     <td>{props.userNumbers.map((num, i) => i !== 5 ?
-                        <span className={`${props.winningNumbers.includes(num) ?'white-cir':'gray-cir'}`}>{num}</span>
+                        <span className={`${!num ? '': props.winningNumbers.includes(num) ?'white-cir':'gray-cir'}`}>{num}</span>
                         :
-                        <span className={`${props.winningNumbers[5]===props.userNumbers[5] ?'redWin-cir':'red-cir'}`}>{num}</span>
+                        <span className={`${!num ? '':props.winningNumbers[5]===props.userNumbers[5] ?'redWin-cir':'red-cir'}`}>{num}</span>
                     )
 
                     }</td>
@@ -28,7 +28,7 @@ const Stats = (props) => {
                 <tr>
                     <td>Win number</td>
                     <td>{props.winningNumbers.map((num, i) => i !== 5 ?
-                        <span className="gray-cir">{num}</span>
+                        <span className="white-cir">{num}</span>
                         :
                         <span className="red-cir">{num}</span>
                     )}</td>
@@ -38,7 +38,7 @@ const Stats = (props) => {
                     <td>{props.sameNumber}</td>
                 </tr>
                 <tr>
-                    <td>total win</td>
+                    <td>total played</td>
                     <td>0</td>
                 </tr>
                 </tbody>
