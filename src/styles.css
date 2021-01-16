@@ -78,7 +78,7 @@ body {
     display: none;
 }
 
-.btn {
+.btn, .btn5-mini{
     margin: 5px;
     padding: 15px 34px;
     overflow: hidden;
@@ -117,6 +117,13 @@ body {
 .btn5 {
     background: linear-gradient(90deg, #eac6b7, #e8adcd);
 }
+
+.btn5-mini{
+    padding: 5px 10px;
+    background: linear-gradient(90deg, #eac6b7, #94dbcc);
+
+}
+
 
 
 .btn:before,
@@ -195,11 +202,12 @@ table td {
 }
 
 .footer {
-    position: fixed;
-    left: 0;
+    flex: 0 0 auto;
+    color: white;
     bottom: 0;
     width: 100%;
-    color: white;
+    height: 80px;
     text-align: center;
+    background: rgba(83, 238, 181, 0.5);
 
 }
