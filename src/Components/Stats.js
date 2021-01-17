@@ -2,20 +2,19 @@ import React from 'react';
 
 
 const Stats = (props) => {
-
-    // const filterSameNumber = () => {
-    //     props.setSameNumber(props.usersNumbers.filter(el => props.winningNumbers.includes(el)))
-    //     console.log('yes')
-    // }
-
-
+    const resetCounter = () => {
+        props.setCounter({
+            ...props.counter,
+            playedTimes: 0
+        })
+    }
     return (
-        <div>
+        <div className="Stats">
             <h1>Stats</h1>
             <table className="center">
                 <tbody>
                 <tr>
-                    <td>User number</td>
+                    <td>Your numbers:</td>
                     <td>{props.userNumbers.map((num, i) => i !== 5 ?
                         <span
                             className={`${!num ? '' : props.winningNumbers.includes(num) ? 'white-cir' : 'gray-cir'}`}>{num}</span>
@@ -28,7 +27,7 @@ const Stats = (props) => {
                 </tr>
 
                 <tr>
-                    <td>Win number</td>
+                    <td>Winning numbers:</td>
                     <td>{props.winningNumbers.map((num, i) => i !== 5 ?
                         <span className="white-cir">{num}</span>
                         :
@@ -38,23 +37,33 @@ const Stats = (props) => {
                 <tr>
                     <td>Same number</td>
                     <td>{props.sameNumber
-
-
-
-                        .map(num => !num ? '' : String(num).length <= 2 ?  <span className="white-cir">{num}</span>
+                        .map(num => !num ? '' : String(num).length <= 2 ? <span className="white-cir">{num}</span>
                             :
-                            <span className="red-cir">{String(num).slice(1,-1)}</span>
+                            <span className="red-cir">{String(num).slice(1, -1)}</span>
                         )
+                    }
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Maximum Same number</td>
+                    <td>{props.counter.maxSameNum.map(num => !num ? '' : String(num).length <= 2 ?
+                        <span className="white-cir">{num}</span>
+                        :
+                        <span className="red-cir">{String(num).slice(1, -1)}</span>
+                    )
                     }
                     </td>
                 </tr>
                 <tr>
                     <td>total played</td>
-                    <td>{props.counter.playedTimes}  <button className="btn5-mini">reset</button></td>
+                    <td>{props.counter.playedTimes}
+                        <button onClick={resetCounter} className="btn5-mini">reset</button>
+                    </td>
                 </tr>
                 </tbody>
             </table>
         </div>
-)
+    )
 }
 export default Stats;

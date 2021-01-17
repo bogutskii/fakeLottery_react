@@ -11,6 +11,7 @@ const Inputs = (props) => {
                 if (user.indexOf(a) === 5) return 0
                 else return a - b
             })
+            user = [...new Set(user)];
             props.setUsersNumbers(user.map(num => String(num).length < 2 ? '0' + num : num))
 
 
@@ -28,23 +29,36 @@ const Inputs = (props) => {
             props.setWinningNumbers(comp.map(num => +num < 10 ? '0' + num : num))
             sameNum(user, comp);
 
-            props.setCounter({...props.counter, playedTimes: props.counter.playedTimes+1})
 
+            checkMax()
         }
 
-        const sameNum = (arr1, arr2) => {
-            props.setSameNumber(arr1.map((num, i) => arr2.includes(num) && i !== 5 ? num :
-                arr2.includes(num) && i === 5 ? '*' + num + '*' : ''))
+    const sameNum = (arr1, arr2) => {
+        props.setSameNumber(arr1.map((num, i) => arr2.includes(num) && i !== 5 ? num :
+            arr2.includes(num) && i === 5 ? '*' + num + '*' : ''))
+    }
+    const checkMax = () => {
+        props.setCounter({
+            ...props.counter,
+            playedTimes: props.counter.playedTimes + 1
+        })
+        if (props.counter.maxSameNum.filter(el => el).length <= props.sameNumber.filter(el => el).length) {
+            props.setCounter({
+                ...props.counter,
+                maxSameNum: props.sameNumber
+            })
         }
-        const inputNumbers = [...props.usersNumbers];
+    }
 
-        const limit = (e, key) => {
-            inputNumbers[key] = +e.target.value;
+    const inputNumbers = [...props.usersNumbers];
 
-            if (e.target.value > (key !== 5 ? 69 : 24) || e.target.value === "00") {
-                inputNumbers[key] = +e.target.value.substr(0, 1);
-            } else if (e.target.value.length > 2) {
-                inputNumbers[key] = +e.target.value.substr(0, 2);
+    const limit = (e, key) => {
+        inputNumbers[key] = +e.target.value;
+
+        if (e.target.value > (key !== 5 ? 69 : 24) || e.target.value === "00") {
+            inputNumbers[key] = +e.target.value.substr(0, 1);
+        } else if (e.target.value.length > 2) {
+            inputNumbers[key] = +e.target.value.substr(0, 2);
             }
             checkFields()
             props.setUsersNumbers(inputNumbers)

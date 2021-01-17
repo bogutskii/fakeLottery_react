@@ -13,7 +13,8 @@ export default function App() {
     const [sameNumber, setSameNumber] = useState([])
     const [counter, setCounter] = useState({
         playedTimes: 0,
-        credits: 0
+        credits: 0,
+        maxSameNum: []
     })
 
 
@@ -33,6 +34,7 @@ export default function App() {
                     setIsEnable={(isEnable) => setIsEnable(isEnable)}
                     winningNumbers={winningNumbers}
                     setWinningNumbers={(winningNumbers) => setWinningNumbers(winningNumbers)}
+                    sameNumber={sameNumber}
                     setSameNumber={(sameNumber) => setSameNumber(sameNumber)}
                     counter={counter}
                     setCounter={(counter) => setCounter(counter)}
@@ -45,6 +47,8 @@ export default function App() {
                    sameNumber={sameNumber}
                    setSameNumber={(sameNumber) => setSameNumber(sameNumber)}
                    counter={counter}
+                   setCounter={(counter) => setCounter(counter)}
+
             />
 
             <Footer/>
