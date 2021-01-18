@@ -6,6 +6,11 @@ const Inputs = (props) => {
 
         const generator = () => {
 
+            props.setCounter({
+                ...props.counter,
+                playedTimes: props.counter.playedTimes + 1
+            })
+
             let user = [...props.usersNumbers];
             user.sort((a, b) => {
                 if (user.indexOf(a) === 5) return 0
@@ -38,10 +43,7 @@ const Inputs = (props) => {
             arr2.includes(num) && i === 5 ? '*' + num + '*' : ''))
     }
     const checkMax = () => {
-        props.setCounter({
-            ...props.counter,
-            playedTimes: props.counter.playedTimes + 1
-        })
+
         if (props.counter.maxSameNum.filter(el => el).length <= props.sameNumber.filter(el => el).length) {
             props.setCounter({
                 ...props.counter,

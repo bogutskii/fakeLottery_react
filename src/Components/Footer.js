@@ -6,7 +6,7 @@ const Footer = ()=> {
   return <div className="footer">
       <div>
           <p>
-              Is not a lottery, it is just a simulator showing the generation of random values and matches.
+              Is not a real lottery, it is just a simulator showing the generation of random values and matches.
 
               Here there is no real money or any payments, everything is entertainment in nature and there can be no
               property and monetary claims.
