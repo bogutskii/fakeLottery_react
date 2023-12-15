@@ -93,7 +93,7 @@ const Inputs = (props) => {
                            onChange={(event) => limit(event, 5)} required/>
                 </form>
                 <button className="btn btn1" onClick={generator} disabled={props.isEnable}>PLAY</button>
-                <button className="btn btn5" disabled={props.isEnable}>Clear</button>
+                {/* <button className="btn btn5" disabled={props.isEnable}>Clear</button> */}
             </div>
         );
     }

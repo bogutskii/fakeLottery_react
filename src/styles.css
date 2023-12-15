@@ -1,6 +1,9 @@
 .App {
     font-family: sans-serif;
     text-align: center;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
 }
 
 body {
@@ -35,6 +38,7 @@ body {
     font-size: x-large;
     background-color: #f8386b;
     text-align: center;
+    border-radius: 15px;
 }
 
 .numbox {
@@ -46,6 +50,7 @@ body {
     font-size: x-large;
     -moz-appearance: textfield;
     text-align: center;
+    border-radius: 15px;
 }
 
 .numbox::-webkit-inner-spin-button {
@@ -120,7 +125,7 @@ body {
 
 .btn5-mini{
     padding: 5px 10px;
-    background: linear-gradient(90deg, #eac6b7, #94dbcc);
+    background: linear-gradient(90deg, #3f3fe5, #94dbcc);
 
 }
 
