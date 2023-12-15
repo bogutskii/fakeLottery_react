@@ -1,22 +1,13 @@
 {
   "files": {
-    "main.css": "/fakeLottery_react/static/css/main.b130a9ef.chunk.css",
-    "main.js": "/fakeLottery_react/static/js/main.0629f69c.chunk.js",
-    "main.js.map": "/fakeLottery_react/static/js/main.0629f69c.chunk.js.map",
-    "runtime-main.js": "/fakeLottery_react/static/js/runtime-main.05caff80.js",
-    "runtime-main.js.map": "/fakeLottery_react/static/js/runtime-main.05caff80.js.map",
-    "static/js/2.6faafdcc.chunk.js": "/fakeLottery_react/static/js/2.6faafdcc.chunk.js",
-    "static/js/2.6faafdcc.chunk.js.map": "/fakeLottery_react/static/js/2.6faafdcc.chunk.js.map",
+    "main.css": "/fakeLottery_react/static/css/main.27d7f8f8.css",
+    "main.js": "/fakeLottery_react/static/js/main.14e613a8.js",
     "index.html": "/fakeLottery_react/index.html",
-    "precache-manifest.178d6f5baffd92284bcc7cbb536d2c50.js": "/fakeLottery_react/precache-manifest.178d6f5baffd92284bcc7cbb536d2c50.js",
-    "service-worker.js": "/fakeLottery_react/service-worker.js",
-    "static/css/main.b130a9ef.chunk.css.map": "/fakeLottery_react/static/css/main.b130a9ef.chunk.css.map",
-    "static/js/2.6faafdcc.chunk.js.LICENSE.txt": "/fakeLottery_react/static/js/2.6faafdcc.chunk.js.LICENSE.txt"
+    "main.27d7f8f8.css.map": "/fakeLottery_react/static/css/main.27d7f8f8.css.map",
+    "main.14e613a8.js.map": "/fakeLottery_react/static/js/main.14e613a8.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.05caff80.js",
-    "static/js/2.6faafdcc.chunk.js",
-    "static/css/main.b130a9ef.chunk.css",
-    "static/js/main.0629f69c.chunk.js"
+    "static/css/main.27d7f8f8.css",
+    "static/js/main.14e613a8.js"
   ]
 }
