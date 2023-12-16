@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/fakeLottery_react/static/css/main.27d7f8f8.css",
-    "main.js": "/fakeLottery_react/static/js/main.14e613a8.js",
+    "main.css": "/fakeLottery_react/static/css/main.c9130fef.css",
+    "main.js": "/fakeLottery_react/static/js/main.71dda608.js",
     "index.html": "/fakeLottery_react/index.html",
-    "main.27d7f8f8.css.map": "/fakeLottery_react/static/css/main.27d7f8f8.css.map",
-    "main.14e613a8.js.map": "/fakeLottery_react/static/js/main.14e613a8.js.map"
+    "main.c9130fef.css.map": "/fakeLottery_react/static/css/main.c9130fef.css.map",
+    "main.71dda608.js.map": "/fakeLottery_react/static/js/main.71dda608.js.map"
   },
   "entrypoints": [
-    "static/css/main.27d7f8f8.css",
-    "static/js/main.14e613a8.js"
+    "static/css/main.c9130fef.css",
+    "static/js/main.71dda608.js"
   ]
 }
