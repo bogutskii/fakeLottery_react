@@ -1,5 +1,5 @@
 import React from "react";
-//import "../src/styles.css";
+
 
 const Inputs = (props) => {
 
@@ -54,19 +54,18 @@ const Inputs = (props) => {
 
     const inputNumbers = [...props.usersNumbers];
 
-    const limit = (e, key) => {
-        inputNumbers[key] = +e.target.value;
+const limit = (e, key) => {
+  const value = +e.target.value;
 
-        if (e.target.value > (key !== 5 ? 69 : 24) || e.target.value === "00") {
-            inputNumbers[key] = +e.target.value.substr(0, 1);
-        } else if (e.target.value.length > 2) {
-            inputNumbers[key] = +e.target.value.substr(0, 2);
-            }
-            checkFields()
-            props.setUsersNumbers(inputNumbers)
-            console.log(e.target.value, key, inputNumbers)
+  if (value > (key !== 5 ? 69 : 24) || value === "00") {
+    inputNumbers[key] = +e.target.value.substr(0, 1);
+  } else if (e.target.value.length > 2) {
+    inputNumbers[key] = +e.target.value.substr(0, 2);
+  }
 
-        }
+  checkFields();
+  props.setUsersNumbers(inputNumbers);
+};
 
         const checkFields = () => {
             if (Object.values(inputNumbers).every(el => +el > 0)) {

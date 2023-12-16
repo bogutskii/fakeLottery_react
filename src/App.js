@@ -7,7 +7,7 @@ import Footer from "./Components/Footer";
 
 export default function App() {
   const [isEnable, setIsEnable] = useState(true);
-  const [userNumbers, setUserNumbers] = useState(["", "", "", "", "", ""]);
+  const [userNumbers, setUserNumbers] = useState(Array(6).fill(""));
   const [winningNumbers, setWinningNumbers] = useState([]);
   const [sameNumber, setSameNumber] = useState([]);
   const [counter, setCounter] = useState({
@@ -16,6 +16,26 @@ export default function App() {
     maxSameNum: [],
   });
 
+  const handleIsEnableChange = (isEnable) => {
+    setIsEnable(isEnable);
+  };
+
+  const handleUserNumbersChange = (usersNumbers) => {
+    setUserNumbers(usersNumbers);
+  };
+
+  const handleWinningNumbersChange = (winningNumbers) => {
+    setWinningNumbers(winningNumbers);
+  };
+
+  const handleSameNumberChange = (sameNumber) => {
+    setSameNumber(sameNumber);
+  };
+
+  const handleCounterChange = (counter) => {
+    setCounter(counter);
+  };
+
   return (
     <div className="App">
       <header>
@@ -23,32 +43,30 @@ export default function App() {
       </header>
       <main>
         <GeneratorRandomNumber
-          setIsEnable={(isEnable) => setIsEnable(isEnable)}
-          setUsersNumbers={(usersNumbers) => setUserNumbers(usersNumbers)}
+          setIsEnable={handleIsEnableChange}
+          setUsersNumbers={handleUserNumbersChange}
         />
-        <h2>Your lucky numbers</h2>
+        <h2 className="h2-main">Your lucky numbers</h2>
         <Inputs
           usersNumbers={userNumbers}
-          setUsersNumbers={(usersNumbers) => setUserNumbers(usersNumbers)}
+          setUsersNumbers={handleUserNumbersChange}
           isEnable={isEnable}
-          setIsEnable={(isEnable) => setIsEnable(isEnable)}
+          setIsEnable={handleIsEnableChange}
           winningNumbers={winningNumbers}
-          setWinningNumbers={(winningNumbers) =>
-            setWinningNumbers(winningNumbers)
-          }
+          setWinningNumbers={handleWinningNumbersChange}
           sameNumber={sameNumber}
-          setSameNumber={(sameNumber) => setSameNumber(sameNumber)}
+          setSameNumber={handleSameNumberChange}
           counter={counter}
-          setCounter={(counter) => setCounter(counter)}
+          setCounter={handleCounterChange}
         />
 
         <Stats
           userNumbers={userNumbers}
           winningNumbers={winningNumbers}
           sameNumber={sameNumber}
-          setSameNumber={(sameNumber) => setSameNumber(sameNumber)}
+          setSameNumber={handleSameNumberChange}
           counter={counter}
-          setCounter={(counter) => setCounter(counter)}
+          setCounter={handleCounterChange}
         />
       </main>
       <footer>

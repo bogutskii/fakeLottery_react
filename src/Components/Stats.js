@@ -1,17 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Stats = (props) => {
+  const [topNumbers, setTopNumbers] = useState([]);
+
   const resetCounter = () => {
     props.setCounter({
       ...props.counter,
       playedTimes: 0,
     });
   };
+
+  const updateTopNumbers = () => {
+    const allNumbers = props.userNumbers.concat(props.winningNumbers);
+    const counts = {};
+
+    allNumbers.forEach((num) => {
+      counts[num] = (counts[num] || 0) + 1;
+    });
+
+    const sortedNumbers = Object.keys(counts).sort(
+      (a, b) => counts[b] - counts[a]
+    );
+
+    setTopNumbers(sortedNumbers.slice(0, 5));
+  };
+
+  useEffect(() => {
+    updateTopNumbers();
+  }, [props.winningNumbers]);
+
   return (
     <div className="Stats">
       <h1>Stats</h1>
       <table className="center">
         <tbody>
+          <tr>
+            <td>Winning numbers:</td>
+            <td>
+              {props.winningNumbers.map((num, i) =>
+                i !== 5 ? (
+                  <span className="white-cir white-cir2">{num}</span>
+                ) : (
+                  <span className="red-cir red-cir2">{num}</span>
+                )
+              )}
+            </td>
+          </tr>
           <tr>
             <td>Your numbers:</td>
             <td>
@@ -22,7 +56,7 @@ const Stats = (props) => {
                       !num
                         ? ""
                         : props.winningNumbers.includes(num)
-                        ? "white-cir"
+                        ? "white-cir yellow-txt"
                         : "gray-cir"
                     }`}
                   >
@@ -34,7 +68,7 @@ const Stats = (props) => {
                       !num
                         ? ""
                         : props.winningNumbers[5] === props.userNumbers[5]
-                        ? "redWin-cir"
+                        ? "redWin-cir yellow-txt"
                         : "red-cir"
                     }`}
                   >
@@ -45,18 +79,6 @@ const Stats = (props) => {
             </td>
           </tr>
 
-          <tr>
-            <td>Winning numbers:</td>
-            <td>
-              {props.winningNumbers.map((num, i) =>
-                i !== 5 ? (
-                  <span className="white-cir">{num}</span>
-                ) : (
-                  <span className="red-cir">{num}</span>
-                )
-              )}
-            </td>
-          </tr>
           <tr>
             <td>Same number</td>
             <td>
@@ -87,7 +109,7 @@ const Stats = (props) => {
             </td>
           </tr>
           <tr>
-            <td>total played</td>
+            <td>Total played</td>
             <td>{props.counter.playedTimes}</td>
           </tr>
           <tr>
