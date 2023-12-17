@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 const Stats = (props) => {
   const [topNumbers, setTopNumbers] = useState([]);
 
-  const resetCounter = () => {
-    props.setCounter({
-      ...props.counter,
-      playedTimes: 0,
-    });
-  };
+  // const resetCounter = () => {
+  //   props.setCounter({
+  //     ...props.counter,
+  //     playedTimes: 0,
+  //   });
+  // };
 
   const updateTopNumbers = () => {
     const allNumbers = props.userNumbers.concat(props.winningNumbers);
@@ -30,8 +30,7 @@ const Stats = (props) => {
   }, [props.winningNumbers]);
 
   return (
-    <div className="Stats">
-      <h1>Stats</h1>
+    <div className="stats">
       <table className="center">
         <tbody>
           <tr>
@@ -110,12 +109,13 @@ const Stats = (props) => {
           </tr>
           <tr>
             <td>Total played</td>
-            <td>{props.counter.playedTimes}</td>
-          </tr>
-          <tr>
-            <button onClick={resetCounter} className="btn btn2">
-              reset
-            </button>
+            <td>
+              {props.counter.playedTimes}{" "}
+              {/* <button onClick={resetCounter} className="btn btn2">
+                reset
+              </button> */}
+            </td>
+
           </tr>
         </tbody>
       </table>

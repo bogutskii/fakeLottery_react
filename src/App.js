@@ -1,10 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import Inputs from "./Components/Inputs";
 import Stats from "./Components/Stats";
 import GeneratorRandomNumber from "./Components/GeneratorRandomNumber";
 import Footer from "./Components/Footer";
 
+const getRandomNumber = (max) => {
+  return Math.floor(Math.random() * max) + 1;
+};
+
+const getRandomColor = () => {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+const createRandomDigit = () => {
+  const digit = document.createElement("div");
+  digit.className = "digit";
+  digit.style.top = `${getRandomNumber(window.innerHeight)}px`;
+  digit.style.left = `${getRandomNumber(window.innerWidth)}px`;
+  digit.textContent = getRandomNumber(65);
+  digit.style.fontSize = `${getRandomNumber(20) + 170}px`;
+  digit.style.color = `${getRandomColor()}10`;
+  digit.style.fontFamily = "sans-serif";
+  document.body.appendChild(digit);
+
+  setTimeout(() => {
+    digit.remove();
+  }, 3000);
+};
 export default function App() {
   const [isEnable, setIsEnable] = useState(true);
   const [userNumbers, setUserNumbers] = useState(Array(6).fill(""));
@@ -15,6 +43,10 @@ export default function App() {
     credits: 0,
     maxSameNum: [],
   });
+  useEffect(() => {
+    const intervalId = setInterval(createRandomDigit, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
 
   const handleIsEnableChange = (isEnable) => {
     setIsEnable(isEnable);

@@ -6,18 +6,43 @@
     grid-template-rows: auto 1fr auto;
 }
 
+@keyframes fadeInOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .digit {
+    position: absolute;
+    animation: fadeInOut 3s ease-in-out;
+  }
+
+/*
 body {
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
     background: linear-gradient(
-            -45deg,
-            #f66133,
-            #e73c7e,
-            #23a6d5,
-            #23d5ab,
-            #c35ed5,
-            #23d517
+        -45deg,
+        rgb(205, 253, 255),
+        #fbafcb,
+        #ffdbab
     );
-    background-size: 1800% 1800%;
-    animation: gradientBG 195s ease infinite;
+    background-size: 600% 600%;
+    animation: gradientBG 85s ease infinite;
 }
 
 @keyframes gradientBG {
@@ -30,6 +55,36 @@ body {
     100% {
         background-position: 0% 50%;
     }
+} */
+
+
+
+
+/* body {
+    background: linear-gradient(
+            -45deg,
+            rgb(205, 253, 255),
+            #fbafcb,
+            #ffdbab
+    );
+    background-size: 600% 600%;
+    animation: gradientBG 195s ease infinite;
+    font-size: 1rem;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} */
+.specialNumBox, .numbox, #inputBank, .numboxBank, .btn, .btn5-mini, .white-cir, .red-cir, .gray-cir, .redWin-cir, .white-cir2, .red-cir2, .yellow-txt {
+    font-size: 1rem;
 }
 
 .specialNumBox {
@@ -38,7 +93,8 @@ body {
     font-size: x-large;
     background-color: #f8386b;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 35px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .numbox {
@@ -46,12 +102,13 @@ body {
     height: 50px;
     margin-bottom: 5px;
     margin-top: 5px;
-    background-color: #d5f33e;
+    background-color: #ebf9a7;
     font-size: x-large;
     -moz-appearance: textfield;
     appearance: textfield;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 35px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .numbox::-webkit-inner-spin-button {
@@ -67,6 +124,7 @@ body {
     width: 90px;
     text-align: center;
     padding-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .numboxBank {
@@ -99,27 +157,34 @@ body {
     outline: none;
     cursor: pointer;
     border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .btn1 {
-    background: linear-gradient(90deg, #c600b2, #7619fd);
+    background: linear-gradient(90deg, #f12e5f, #7619fd);
 }
 
 .btn1:disabled {
-    background: linear-gradient(90deg, #797678, #9c9b9d);
+    background: linear-gradient(90deg, #f86789, #9c9b9d);
     cursor: no-drop;
 }
 
 .btn2 {
-    background: linear-gradient(90deg, #a3ffb0, #2bd9e8);
+    background: linear-gradient(90deg, #8c99fe, #2be8c5);
+    margin: 4px;
+    padding: 6px 10px;
 }
 
 .btn3 {
-    background: linear-gradient(90deg, #49c2ff, #ff6150, #ffde1f, #7cc6ff);
+    background: linear-gradient(90deg, #182dea, #ff6150, #fee453,#ff6150, #182dea);
+    font-size: 2vh;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
 }
 
 .btn4 {
-    background: linear-gradient(90deg, #38ffb1, #17d215);
+    background: linear-gradient(90deg, #38ffb1, #b9f1b8);
 }
 
 .btn5 {
@@ -128,7 +193,7 @@ body {
 
 .btn5-mini{
     padding: 5px 10px;
-    background: linear-gradient(90deg, #3f3fe5, #94dbcc);
+    background: linear-gradient(90deg, #7f7fe7, #94dbcc);
 
 }
 
@@ -161,9 +226,11 @@ body {
 .input-form {
     display: inline-flex;
 }
-
+.h1-main, .h2-main, .center, table td, .white-cir, .red-cir, .gray-cir, .redWin-cir {
+    font-size: 1rem;
+}
 .h1-main {
-    font-size: 5vw;
+    font-size: 5vw; /* Set a minimum height for the text */
     background: linear-gradient(94.23deg, rgba(8, 50, 217, 0.5) 12.41%, rgba(232, 47, 5, 0.7) 52.55%, rgba(14, 243, 198, 0.8) 89.95%);
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -182,17 +249,23 @@ body {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+
 }
 
 .center {
     margin-left: auto;
     margin-right: auto;
-    font-size: 2vh;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    min-width: 450px;
+    background: rgba(245, 223, 253, 0.5);
 }
 
 table td {
     text-align: left;
-    height: 3vw;
+    height: 3rem;
+    color: black;
+
 }
 
 .white-cir,.red-cir, .gray-cir,.redWin-cir  {
@@ -206,6 +279,7 @@ table td {
     font-size: 19px;
     color: #2f3e4a;
     padding: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 .white-cir2,.red-cir2{
     font-size: 25px;
@@ -229,17 +303,25 @@ table td {
 }
 
 .yellow-txt{
-    color: rgb(149, 235, 87);
+    color: rgb(195, 230, 170);
     -webkit-text-stroke: 1px rgb(81, 177, 84);
 }
 
 .footer {
     display: flex;
-    color: white;
+    color: rgb(142, 141, 141);
     text-align: center;
-    background: rgba(83, 238, 181, 0.5);
+    background: rgba(195, 251, 231, 0.5);
     align-content: flex-end;
     margin-top: 5vw;
 
 
+}
+
+.stats {
+    display: flex;
+    color: rgb(209, 208, 208);
+    text-align: center;
+    align-content: flex-end;
+    margin-top: 5vw;
 }
